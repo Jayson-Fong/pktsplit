@@ -5,12 +5,31 @@ build-backend = "maturin"
 [project]
 name = "pktsplit"
 requires-python = ">=3.8"
+authors = [
+    {name = "Jayson Fong", email = "jayson.fong@gatech.edu"}
+]
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Jayson-Fong/pktsplit"
+Issues = "https://github.com/Jayson-Fong/pktsplit/issues"
 
 [project.scripts]
 pktsplit = "pktsplit.__main__:main"
