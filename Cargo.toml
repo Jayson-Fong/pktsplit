@@ -1,0 +1,15 @@
+[package]
+name = "pktsplit"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "pktsplit"
+path= "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+pcap-file = "2"
+pyo3 = { version = "0.27.0", features = ["extension-module"] }
