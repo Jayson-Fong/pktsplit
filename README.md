@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[💼 Purpose](#purpose) | [🏁 Usage](#usage)
+[💼 Purpose](#purpose) | [🏁 Usage](#usage) | [⚙️ Installation](#installation)
 
 </div>
 
@@ -17,6 +17,8 @@
 
 pktsplit is a simple Python package written in Rust to facilitate splitting pcap files into smaller chunks from
 standard input based on rotation conditions, such as packet count and time intervals.
+
+It is designed to facilitate sensor development for packet capturing where there is no access to a network tap.
 
 <details>
 <summary>⚡ Use case: U.S. Department of Energy's CyberForce Competition</summary>
@@ -63,6 +65,11 @@ To capture packets from a remote host and split the pcap data into smaller chunk
 ssh -t 192.168.1.1 "tcpdump -nU -s0 -w - 'port 22'" | pktsplit -w '192.168.1.1-{index}.pcap' -G 15
 ```
 
+The `pktsplit` command offers the ability to rotate by seconds, packet count, or both:
+
+- `--rotate-seconds` / `-G`: Rotate to a new file after the specified number of seconds.
+- `--max-packets` / `-P`: Rotate to a new file after the specified number of packets. 
+
 <details>
 <summary>🦉Ingesting into Arkime</summary>
 
@@ -73,3 +80,17 @@ As `pktsplit` outputs pcap files and closes them upon rotation, they can be pick
 ```
 
 </details>
+
+# Installation
+
+`pktsplit` is available on PyPI:
+
+```shell
+pip install pktsplit
+```
+
+You may alternatively install from source for the latest development version:
+
+```shell
+pip install git+https://github.com/Jayson-Fong/pktsplit.git
+```
